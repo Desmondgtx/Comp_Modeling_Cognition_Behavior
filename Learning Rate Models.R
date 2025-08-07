@@ -1,3 +1,4 @@
+
 ## Modeling Learning Rate 
 ## Computational Modeling of Cognition and Behavior
 
@@ -34,6 +35,7 @@ exp_predictions = exp_model(trials, alpha)
 noise_factor = 200
 observed_data = power_predictions + rnorm(length(trials), mean = 0, sd = noise_factor)
 
+
 # Ensure there are no negative RTs
 observed_data[observed_data < 100] = 100 + abs(rnorm(sum(observed_data < 100), 0, 50))
 
@@ -64,10 +66,6 @@ rmsd_exp = sqrt(mean((df$Observed - df$Exponential)^2))
 
 cat("Power Law RMSD:", rmsd_power, "\n")
 cat("Exponential RMSD:", rmsd_exp, "\n")
-
-
-
-
 
 
 
